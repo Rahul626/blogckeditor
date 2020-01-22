@@ -1,0 +1,89 @@
+:host {
+  display: block;
+  margin-top: 1rem;
+}
+
+.info-text {
+  text-align: center;
+}
+
+.post-image {
+  width: 100%;
+}
+
+.post-image img {
+  width: 100%;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+}
+
+body {
+  font-family: Segoe UI;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1rem;
+  padding: 15px;
+  background-color: #f7f7f7;
+}
+
+div.container {
+  width: 100%;
+  display: grid;
+  grid-gap: 20px;
+  grid-template-areas:
+    "header header header"
+    "content content sidebar"
+    "footer footer footer"
+}
+
+/* nav.menu {
+  width: 98%;
+}
+ */
+
+nav.menu ul {
+  display: flex;
+}
+
+nav.menu ul > li:last-child {
+  margin-left: auto;
+}
+
+header {
+  grid-area: header;
+}
+
+
+aside {
+  grid-area: sidebar;
+  float: left;
+  margin-left: 15px;
+  margin-bottom: 15px;
+  min-width: 15%;
+}
+
+aside h2 {
+  text-align: center;
+}
+
+
+figure {
+  margin: 0px;
+  color: white;
+  background-color: black;
+  min-width: 100%;
+  height: 180px;
+  background-image: url(https://picsum.photos/300/400)
+}
+
+.card {
+  background-color: white;
+  padding: 15px;
+  margin-top: 15px;
+}
+
+@media screen and (max-width: 800px) {
+  main, aside {
+    width: 100%;
+    padding: 0;
+  }
+}

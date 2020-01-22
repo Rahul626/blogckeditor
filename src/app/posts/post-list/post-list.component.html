@@ -1,0 +1,79 @@
+<div class="container">
+  <header>
+    <h1> Cukzz food Blog</h1>
+    <nav class="menu">
+      <ul>
+        <li class="left"><a href="#">Recent</a></li>
+        <li class="left"><a href="#">Most liked</a></li>
+        <li class="left"><a href="#">Recent</a></li>
+        <li class="left"><a href="#">Most liked</a></li>
+
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <article class="card" *ngIf="posts.length > 0 ">
+      <div *ngFor="let post of posts" >
+        <h2>Progressively ELayouts Post</h2>
+        <h5>Jul 15, 2018</h5>
+        <figure> {{ post.title }}</figure>
+        <div class="post-image">
+          <img [src]="post.imagePath" [alt]="post.title">
+        </div>
+        <p>{{ post.content }}</p>
+      </div >
+    </article>
+  </main>
+  <article class="card" *ngIf="posts.length > 0 ">
+    <div *ngFor="let post of posts" >
+    <h2>Progressively Enhanced CSS Layouts Post</h2>
+    <h5>Jul 15, 2018</h5>
+    <figure> {{ post.title }}</figure>
+    <div class="post-image">
+      <img [src]="post.imagePath" [alt]="post.title">
+    </div>
+    <p>{{ post.content }}</p>
+  </div >
+  </article>
+
+  <aside>
+    <h2>Popular Posts</h2>
+    <ul class="card">
+      <li>
+        <figure>Featured Image</figure>
+        <p>Lorem ipsum dolor sit amet..</p>
+     </li>
+      <li>
+        <figure>Featured Image</figure>
+        <p>Lorem ipsum dolor sit amet..</p>
+      </li>
+      <li>
+        <figure>Featured Image</figure>
+        <p>Lorem ipsum dolor sit amet..</p>
+      </li>
+    </ul>
+
+    <h2>Follow Us</h2>
+
+    <ul class="card">
+      <li>
+        <p>Lorem ipsum dolor sit amet..</p>
+      </li>
+    </ul>
+  </aside>
+<!-- <mat-accordion multi="true" *ngIf="posts.length > 0 && !isLoading">
+  <mat-expansion-panel *ngFor="let post of posts">
+    <mat-expansion-panel-header>
+      {{ post.title }}
+    </mat-expansion-panel-header>
+    <div class="post-image">
+      <img [src]="post.imagePath" [alt]="post.title">
+    </div>
+    <p>{{ post.content }}</p>
+    <mat-action-row>
+      <a mat-button color="primary" [routerLink]="['/edit', post.id]">EDIT</a>
+      <button mat-button color="warn" (click)="onDelete(post.id)">DELETE</button>
+    </mat-action-row>
+  </mat-expansion-panel>
+</mat-accordion>
+<p class="info-text mat-body-1" *ngIf="posts.length <= 0 && !isLoading">No posts added yet!</p> -->

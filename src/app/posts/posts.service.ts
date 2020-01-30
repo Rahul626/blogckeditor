@@ -23,7 +23,8 @@ export class PostsService {
               title: post.title,
               content: post.content,
               id: post._id,
-              imagePath: post.imagePath
+              imagePath: post.imagePath,
+              status: post.status
             };
           });
         })
@@ -108,6 +109,13 @@ export class PostsService {
         const updatedPosts = this.posts.filter(post => post.id !== postId);
         this.posts = updatedPosts;
         this.postsUpdated.next([...this.posts]);
+      });
+  }
+  pausePost(postId: string) {
+    this.http
+      .post("http://localhost:3000/api/posts/pause", {id: postId})
+      .subscribe(() => {
+        this.getPosts();
       });
   }
 }

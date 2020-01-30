@@ -1,1 +1,46 @@
-<p>about works!</p>
+
+<section class="cards-wrapper">
+  <div class="card-grid-space">
+    <div class="num">01</div>
+    <a class="card" href="https://codetheweb.blog/2017/10/06/html-syntax/" style="--bg-img: url(https://images1-focus-opensocial.googleusercontent.com/gadgets/proxy?container=focus&resize_w=1500&url=https://codetheweb.blog/assets/img/posts/html-syntax/cover.jpg)">
+      <div>
+        <h1> {{ post.title }}</h1>
+        <p>The syntax of a language is how it works. How to actually write it. Learn HTML syntax…</p>
+        <div class="date">6 Oct 2017</div>
+        <div class="tags">
+          <div class="tag">HTML</div>
+        </div>
+      </div>
+    </a>
+  </div>
+  <div class="card-grid-space">
+    <div class="num">02</div>
+    <a class="card" href="https://codetheweb.blog/2017/10/09/basic-types-of-html-tags/" style="--bg-img: url('https://images1-focus-opensocial.googleusercontent.com/gadgets/proxy?container=focus&resize_w=1500&url=https://codetheweb.blog/assets/img/posts/basic-types-of-html-tags/cover.jpg')">
+      <article class="card" *ngIf="posts.length > 0 ">
+        <div *ngFor="let post of posts" >
+          <h2>Post tile will like this </h2>
+          <h5>Jul 15, 2018</h5>
+          <figure> {{ post.title }}</figure>
+          <div class="post-image">
+            <img [src]="post.imagePath" [alt]="post.title">
+          </div>
+          <p>{{ post.content }}</p>
+        </div >
+      </article>
+    </a>
+  </div>
+  <div class="card-grid-space">
+    <div class="num">03</div>
+    <a class="card" href="https://codetheweb.blog/2017/10/14/links-images-about-file-paths/" style="--bg-img: url('https://images1-focus-opensocial.googleusercontent.com/gadgets/proxy?container=focus&resize_w=1500&url=https://codetheweb.blog/assets/img/posts/links-images-about-file-paths/cover.jpg')">
+      <div>
+        <h1>Links, images and about file paths</h1>
+        <p>Learn how to use links and images along with file paths…</p>
+        <div class="date">14 Oct 2017</div>
+        <div class="tags">
+          <div class="tag">HTML</div>
+        </div>
+      </div>
+    </a>
+  </div>
+
+</section>

@@ -5,7 +5,7 @@ import { ActivatedRoute, ParamMap } from "@angular/router";
 import { PostsService } from "../posts.service";
 import { Post } from "../post.model";
 import { mimeType } from "./mime-type.validator";
-import SimpleUploadAdapter from '@ckeditor/ckeditor5-upload/src/adapters/simpleuploadadapter';
+import MediaEmbed from '@ckeditor/ckeditor5-media-embed/src/mediaembed';
 
 
 @Component({
@@ -22,8 +22,10 @@ export class PostCreateComponent implements OnInit {
   imagePreview: string;
   private mode = "create";
   private postId: string;
+
+
   CKEDITOR = {
-    extraPlugins: 'image2,uploadimage',
+    extraPlugins: 'image2,uploadimage,embed,autoembed,image2',
 
     toolbar: [{
         name: 'clipboard',
@@ -56,35 +58,44 @@ export class PostCreateComponent implements OnInit {
       {
         name: 'editing',
         items: ['Scayt']
-      },{
+      },
+      {
+        name : 'media',
+        items : 'mediaEmbed'
+      },
+      {
          // Adding drag and drop image upload.
-         extraPlugins: 'print,format,font,colorbutton,justify,uploadimage',
-         uploadUrl: 'http://localhost:3000/images/',
+         extraPlugins: 'print,format,font,colorbutton,justify,uploadimage ,embed,autoembed,image2, embed,autoembed,image2',
+         uploadUrl: 'http://localhost:3000/api/posts/images/',
+       removeDialogTabs : 'image:Upload',
 
          // Configure your file manager integration. This example uses CKFinder 3 for PHP.
          filebrowserBrowseUrl: '/apps/ckfinder/3.4.5/ckfinder.html',
          filebrowserImageBrowseUrl: '/apps/ckfinder/3.4.5/ckfinder.html?type=Images',
-         filebrowserUploadUrl: '/apps/ckfinder/3.4.5/core/connector/php/connector.php?command=QuickUpload&type=Files',
-         filebrowserImageUploadUrl: '/apps/ckfinder/3.4.5/core/connector/php/connector.php?command=QuickUpload&type=Images',
+         filebrowserUploadUrl: 'http://localhost:3000/api/posts/upload',
+         filebrowserImageUploadUrl: 'http://localhost:3000/api/posts/upload',
       }
         ],
+        plugins: [MediaEmbed],
+        embed_provider: '//ckeditor.iframe.ly/api/oembed?url={url}&callback={callback}',
 
+        http:'//localhost:3000/file/images/1579781319880_chicken.jpg',
 
     // Configure your file manager integration. This example uses CKFinder 3 for PHP.
     filebrowserBrowseUrl: '/apps/ckfinder/3.4.5/ckfinder.html',
     filebrowserImageBrowseUrl: '/apps/ckfinder/3.4.5/ckfinder.html?type=Images',
-    filebrowserUploadUrl: '/apps/ckfinder/3.4.5/core/connector/php/connector.php?command=QuickUpload&type=Files',
-    filebrowserImageUploadUrl: '/apps/ckfinder/3.4.5/core/connector/php/connector.php?command=QuickUpload&type=Images',
+    filebrowserUploadUrl: 'http://localhost:3000/api/posts/upload',
+    filebrowserImageUploadUrl: 'http://localhost:3000/api/posts/upload',
 
     // Upload dropped or pasted images to the CKFinder connector (note that the response type is set to JSON).
-    uploadUrl: '/apps/ckfinder/3.4.5/core/connector/php/connector.php?command=QuickUpload&type=Files&responseType=json',
+    uploadUrl: 'http://localhost:3000/api/posts/images/',
 
     // Reduce the list of block elements listed in the Format drop-down to the most commonly used.
     format_tags: 'p;h1;h2;h3;pre',
     // Simplify the Image and Link dialog windows. The "Advanced" tab is not needed in most cases.
     removeDialogTabs: 'image:advanced;link:advanced',
 
-    height: 450
+    height: 450,
   }
   constructor(
     public postsService: PostsService,

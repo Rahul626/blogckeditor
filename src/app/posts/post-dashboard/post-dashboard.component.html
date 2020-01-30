@@ -1,0 +1,59 @@
+
+ <mat-accordion multi="true" *ngIf="posts.length > 0 ">
+  <mat-expansion-panel *ngFor="let post of posts">
+        <mat-expansion-panel-header *ngIf="post.status ==1">
+          {{ post.title }} {{post.status }}
+        </mat-expansion-panel-header>
+        <div class="post-image" *ngIf="post.status ==1">
+          <img [src]="post.imagePath" [alt]="post.title">
+        </div>
+        <p *ngIf="post.status ==1">{{ post.content }}</p>
+        <mat-action-row *ngIf="post.status ==1">
+          <a mat-button color="primary" [routerLink]="['/edit', post.id]">EDIT</a>
+          <a mat-button color="primary"  (click)="onPause(post.id)">PAUSE</a>
+          <button mat-button color="warn" (click)="onDelete(post.id)">DELETE</button>
+        </mat-action-row>
+  </mat-expansion-panel>
+</mat-accordion>
+
+
+<p class="info-text mat-body-1" *ngIf="posts.length <= 0 ">No posts added yet!</p>
+
+<hr>
+
+ <div class="container">
+  <div class="row">
+    <div class="col">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">Date</th>
+            <th scope="col">Post Title</th>
+            <th scope="col">Author</th>
+            <th scope="col">likes</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+
+
+
+
+        <tbody>
+          <tr>
+            <th scope="row">3</th>
+            <div *ngFor="let post of posts">
+              <td>    {{ post.title }}</td>
+              <td>Admin</td>
+              <td>931</td>
+              <td>
+                <a mat-button color="primary" [routerLink]="['/edit', post.id]"><i class="fas fa-edit"></i></a>
+                <a mat-button color="primary"  (click)="onPause(post.id)"><i class="far fa-eye"></i></a>
+                <button mat-button color="warn" (click)="onDelete(post.id)"><i class="far fa-trash-alt"></i></button>
+              </td>
+            </div>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

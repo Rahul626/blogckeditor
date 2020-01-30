@@ -7,7 +7,7 @@
 }
 
 .site-footer {
-  background-color: #F58320;
+  background-color: #3a2929;
   padding: 45px 0 20px;
   font-size: 15px;
   line-height: 24px;
@@ -117,7 +117,7 @@
 .social-icons a:focus,
 .social-icons a:hover {
   color: #fff;
-  background-color: #F58320;
+  background-color: grey;
 }
 .social-icons.size-sm a {
   line-height: 34px;

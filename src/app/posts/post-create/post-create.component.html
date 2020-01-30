@@ -2,14 +2,15 @@
   <mat-spinner *ngIf="isLoading"></mat-spinner>
   <form [formGroup]="form" (submit)="onSavePost()" >
     <mat-form-field>
-      <input matInput type="text" formControlName="title" placeholder="Wrte a Post Title">
+      <input matInput type="text" formControlName="title" placeholder="Your Post Title">
       <mat-error *ngIf="form.get('title').invalid">Please enter a post title.</mat-error>
     </mat-form-field>
 
     <div class="form-group">
-      <ckeditor   [config]="CKEDITOR" formControlName="content"></ckeditor>
+      <ckeditor  ></ckeditor>
       <p *ngIf="form.get('content').required">Please enter a post data.</p>
     </div>
+
 
 
     <div>

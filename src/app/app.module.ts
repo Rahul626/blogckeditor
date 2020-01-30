@@ -10,7 +10,7 @@ import {
   MatButtonModule,
   MatToolbarModule,
   MatExpansionModule,
-  MatProgressSpinnerModule
+  MatProgressSpinnerModule,
 } from "@angular/material";
 
 import { AppComponent } from "./app.component";
@@ -20,6 +20,9 @@ import { PostListComponent } from "./posts/post-list/post-list.component";
 import { AppRoutingModule } from "./app-routing.module";
 import { FooterComponent } from './footer/footer.component';
 import { AboutComponent } from './about/about.component';
+import { PostDashboardComponent } from './posts/post-dashboard/post-dashboard.component';
+import { FaqComponent } from './faq/faq.component';
+import { CkComponent } from './new/ck/ck.component';
 
 
 @NgModule({
@@ -29,7 +32,10 @@ import { AboutComponent } from './about/about.component';
     HeaderComponent,
     PostListComponent,
     FooterComponent,
-    AboutComponent
+    AboutComponent,
+    PostDashboardComponent,
+    FaqComponent,
+    CkComponent
 
   ],
   imports: [

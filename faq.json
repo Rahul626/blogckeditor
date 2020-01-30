@@ -1,0 +1,60 @@
+{
+  "faq":
+    [
+      {
+          "id": 1,
+          "Question": "How is CUKZZ is different from others?",
+          "Answer": "Cukzz is a sophisticated Food website where Users can order food in a simple way where delicious dishes are made by home made Cooks in hygienic methods . "
+      },
+      {
+          "id": 2,
+          "Question": "How will be my orders delivered ?",
+          "Answer": "Your orders will be delivered either by Cook or by your Ownself(you have to Pick up yourself)."
+      },
+      {
+          "id": 3,
+          "Question": "Will I get a partial refund amount if my order gets canceled / not delivered?",
+          "Answer": "Yes,You will get refund amount if your order is cancelled/not delivered. "
+      },
+      {
+          "id": 4,
+          "Question": "how to track my order if cukzz dispatch the order? ",
+          "Answer": "Go to your User profile . Click My Orders and then Click View Details of your respective order .here you can Track your order by clicking on Track on map"
+      },
+      {
+          "id": 5,
+          "Question": "what if User dont pick up the order from cukzz",
+          "Answer": " If he dont want to Pick up then he should choose Restaurants from Delivery ."
+      },
+      {
+          "id": 6,
+          "Question": "Is there any time limit that User should pick up the order from cukzz",
+          "Answer": "Yes ,there is time limit and you will be informed by Cook through intimation"
+      },
+      {
+          "id": 7,
+          "Question": "Can we change the schedule time once the order is placed ",
+          "Answer": "No ,you cant .."
+      },
+      {
+          "id": 8,
+          "Question": "Can we change the schedule time once the order is placed ",
+          "Answer": "No ,you cant .."
+      },
+      {
+          "id": 9,
+          "Question": "how KYC work? how much time it will take to approve??",
+          "Answer": "Cook need to register his/her account by giving his KYC details and it will be approved in a appropriate time by Admin."
+      },
+      {
+          "id": 10,
+          "Question": "if i have foodie(user) account ,can i change to Cook account?? how?",
+          "Answer": "Yes .You can by just mouseovering on a button which is on Top Right position .After that Click Cook Account which  is visible in the dropdown."
+      },
+      {
+          "id": 11,
+          "Question": "Can  I cook & sell, if my kyc is pending?",
+          "Answer": "No , KYC is necessary for Security reasons .So you should complete KYC before you cook and sell."
+      }
+  ]
+}

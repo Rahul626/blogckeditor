@@ -27,6 +27,7 @@
     "ckeditor4-angular": "^1.0.1",
     "core-js": "^3.1.2",
     "json-server": "^0.15.1",
+    "ngx-quill": "^6.3.1",
     "rxjs": "^6.0.0",
     "zone.js": "^0.9.1"
   },

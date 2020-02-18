@@ -38,9 +38,6 @@ export class PostDashboardComponent implements OnInit {
   ngOnDestroy() {
     this.postsSub.unsubscribe();
   }
-  // toggleDisplay() {
-  //   this.isEnable = !this.isEnable;
-  //   confirm("Confirm again!");
-  // }
+
 
 }

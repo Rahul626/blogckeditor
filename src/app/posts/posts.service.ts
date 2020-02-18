@@ -24,7 +24,8 @@ export class PostsService {
               content: post.content,
               id: post._id,
               imagePath: post.imagePath,
-              status: post.status
+              status: post.status,
+              date:post.date
             };
           });
         })
@@ -82,6 +83,7 @@ export class PostsService {
         title: title,
         content: content,
         imagePath: image
+
       };
     }
     this.http
@@ -118,4 +120,14 @@ export class PostsService {
         this.getPosts();
       });
   }
+
+
+// getting single post by title
+
+getSingle(id: string) {
+  return this.http.get<{ _id: string, title: string, content: string, imagePath: string }>(
+    "http://localhost:3000/api/posts/fetch/" + id
+  );
+}
+
 }

@@ -1,21 +1,19 @@
 import { PostDashboardComponent } from './posts/post-dashboard/post-dashboard.component';
-
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
-
 import { PostListComponent } from "./posts/post-list/post-list.component";
 import { PostCreateComponent } from "./posts/post-create/post-create.component";
-import { AboutComponent } from "./about/about.component";
-import { FaqComponent } from './faq/faq.component';
-import { CkComponent } from './new/ck/ck.component';
+import { SinglepostComponent } from './posts/singlepost/singlepost.component';
+
 
 const routes: Routes = [
   { path: '', component: PostListComponent },
   { path: 'create', component: PostCreateComponent },
-  { path: 'about', component: AboutComponent },
-  { path: 'faq', component: FaqComponent },
+
+
   { path: 'dashboard', component: PostDashboardComponent},
-  { path: 'ckeditor', component: CkComponent },
+  // display single page for single post
+  { path: 'post/:Id', component: SinglepostComponent },
 
   { path: 'edit/:postId', component: PostCreateComponent },
 ];

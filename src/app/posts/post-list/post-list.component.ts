@@ -3,6 +3,7 @@ import { Subscription } from 'rxjs';
 
 import { Post } from "../post.model";
 import { PostsService } from "../posts.service";
+import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
   selector: "app-post-list",
@@ -10,23 +11,28 @@ import { PostsService } from "../posts.service";
   styleUrls: ["./post-list.component.css"]
 })
 export class PostListComponent implements OnInit, OnDestroy {
+  dateToday: number = Date.now();
 
   posts: Post[] = [];
-  isLoading = false;
+
+  like = 331;
+
+
 
   private postsSub: Subscription;
 
   constructor(public postsService: PostsService) {}
 
   ngOnInit() {
-    this.isLoading = true;
+
 
 
     this.postsService.getPosts();
     this.postsSub = this.postsService.getPostUpdateListener()
       .subscribe((posts: Post[]) => {
-        this.isLoading = false;
+
         this.posts = posts;
+
       });
   }
 
@@ -37,6 +43,4 @@ export class PostListComponent implements OnInit, OnDestroy {
   ngOnDestroy() {
     this.postsSub.unsubscribe();
   }
-
-
-}
+  }

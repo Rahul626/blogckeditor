@@ -19,10 +19,10 @@ import { HeaderComponent } from "./header/header.component";
 import { PostListComponent } from "./posts/post-list/post-list.component";
 import { AppRoutingModule } from "./app-routing.module";
 import { FooterComponent } from './footer/footer.component';
-import { AboutComponent } from './about/about.component';
 import { PostDashboardComponent } from './posts/post-dashboard/post-dashboard.component';
-import { FaqComponent } from './faq/faq.component';
-import { CkComponent } from './new/ck/ck.component';
+import { SinglepostComponent } from './posts/singlepost/singlepost.component';
+import { RemovespecialcharPipe } from './posts/removespecialchar.pipe';
+
 
 
 @NgModule({
@@ -32,10 +32,9 @@ import { CkComponent } from './new/ck/ck.component';
     HeaderComponent,
     PostListComponent,
     FooterComponent,
-    AboutComponent,
     PostDashboardComponent,
-    FaqComponent,
-    CkComponent
+    SinglepostComponent,
+    RemovespecialcharPipe
 
   ],
   imports: [

@@ -79,7 +79,6 @@ export class PostCreateComponent implements OnInit {
         plugins: [MediaEmbed],
         embed_provider: '//ckeditor.iframe.ly/api/oembed?url={url}&callback={callback}',
 
-        http:'//localhost:3000/file/images/1579781319880_chicken.jpg',
 
     // Configure your file manager integration. This example uses CKFinder 3 for PHP.
     filebrowserBrowseUrl: '/apps/ckfinder/3.4.5/ckfinder.html',
@@ -152,9 +151,9 @@ export class PostCreateComponent implements OnInit {
 
   onSavePost() {
     console.log(this.form)
-    if (this.form.invalid) {
-      return;
-    }
+    // if (this.form.invalid) {
+    //   return;
+    // }
     this.isLoading = true;
     if (this.mode === "create") {
       this.postsService.addPost(

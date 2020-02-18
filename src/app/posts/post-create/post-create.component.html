@@ -7,8 +7,8 @@
     </mat-form-field>
 
     <div class="form-group">
-      <ckeditor  ></ckeditor>
-      <p *ngIf="form.get('content').required">Please enter a post data.</p>
+      <ckeditor   formControlName="content"></ckeditor>
+      <!-- <p *ngIf="form.get('content').required">Please enter a post data.</p> -->
     </div>
 
 
